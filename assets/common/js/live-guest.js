@@ -190,7 +190,11 @@ angular.module('live', []).service('scopeService', function() {
           } else if (type == 'set_filter') {
             ctrl.filteredBoxIndex = obj['box'];
             ctrl.selectedFilterIndex = obj['filter'];
-            ctrl.enableFilter();
+            if (ctrl.selectedFilterIndex > 0) {
+              ctrl.enableFilter();
+            } else {
+              ctrl.disableFilter();
+            }
           }
         };
       }
@@ -246,8 +250,11 @@ angular.module('live', []).service('scopeService', function() {
       ctrl.hostBoxVideo.srcObject = e.streams[0];
       console.log('pc received remote stream');
       ctrl.hostBoxVideo.play();
-      alert(ctrl.selectedFilterIndex);
-      ctrl.enableFilter();
+      if (ctrl.selectedFilterIndex > 0) {
+        ctrl.enableFilter();
+      } else {
+        ctrl.disableFilter();
+      }
       setTimeout(() => {
         /*ctrl.ws.send(JSON.stringify({
           'user_id': ctrl.userID,
@@ -451,6 +458,11 @@ angular.module('live', []).service('scopeService', function() {
       requestAnimationFrame(render);
   }
   requestAnimationFrame(render);
+  };
+
+  ctrl.disableFilter = function() {
+    angular.element('#host-video-filtered').attr('visibility', 'hidden');
+    angular.element('#host-video').attr('visibility', 'visible');
   };
 
   ctrl._update = function() {
