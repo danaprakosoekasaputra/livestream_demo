@@ -398,19 +398,14 @@ angular.module('live', []).service('scopeService', function() {
   // Initialize shader program
   var selectedShader = fsSource_noFilter;
   var filterIndex =  ctrl.selectedFilterIndex;
-  if (filterIndex > 0) {
-    filterIndex--;
-    if (filterIndex == 0) {
-      selectedShader = fsSource_grayScale;
-    } else if (filterIndex == 1) {
-      selectedShader = fsSource_oldTV;
-    } else if (filterIndex == 2) {
-      selectedShader = fsSource_warpOfWest;
-    } else if (filterIndex == 3) {
-      selectedShader = fsSource_warp1;
-    }
-  } else {
-    selectedShader = fsSource_noFilter;
+  if (filterIndex == 1) {
+    selectedShader = fsSource_grayScale;
+  } else if (filterIndex == 2) {
+    selectedShader = fsSource_oldTV;
+  } else if (filterIndex == 3) {
+    selectedShader = fsSource_warpOfWest;
+  } else if (filterIndex == 4) {
+    selectedShader = fsSource_warp1;
   }
   const shaderProgram = initShaderProgram(gl, selectedShader);
 
