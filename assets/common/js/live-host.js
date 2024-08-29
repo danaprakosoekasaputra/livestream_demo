@@ -172,7 +172,8 @@ angular.module('broadcast', []).service('scopeService', function() {
           'type': 'offer',
           'to': userID,
           'message': JSON.stringify(offer),
-          'video_box_index': videoBoxIndex
+          'video_box_index': videoBoxIndex,
+          'filter': ctrl.selectedFilterIndex
         }));
       } else if (type == 'ice_candidate') {
         var iceCandidate = JSON.parse(obj['message']);
