@@ -247,7 +247,7 @@ angular.module('live', []).service('scopeService', function() {
       console.log('pc received remote stream');
       ctrl.hostBoxVideo.play();
       alert(ctrl.selectedFilterIndex);
-      this.enableFilter();
+      ctrl.enableFilter();
       setTimeout(() => {
         /*ctrl.ws.send(JSON.stringify({
           'user_id': ctrl.userID,
