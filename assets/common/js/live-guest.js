@@ -164,7 +164,6 @@ angular.module('live', []).service('scopeService', function() {
             }
           } else if (type == 'offer') {
             ctrl.selectedFilterIndex = obj['filter'];
-            alert(ctrl.selectedFilterIndex);
             ctrl.pcs[videoBoxIndex] = new RTCPeerConnection(rtcConfig);
             ctrl.pcs[videoBoxIndex].addEventListener('icecandidate', e => ctrl.onIceCandidate(ctrl.pcs[videoBoxIndex], e));
             ctrl.pcs[videoBoxIndex].addEventListener('iceconnectionstatechange', (e) => {});
@@ -247,6 +246,7 @@ angular.module('live', []).service('scopeService', function() {
       ctrl.hostBoxVideo.srcObject = e.streams[0];
       console.log('pc received remote stream');
       ctrl.hostBoxVideo.play();
+      alert(ctrl.selectedFilterIndex);
       this.enableFilter();
       setTimeout(() => {
         /*ctrl.ws.send(JSON.stringify({
