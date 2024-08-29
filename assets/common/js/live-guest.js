@@ -464,6 +464,7 @@ angular.module('live', []).service('scopeService', function() {
   ctrl.disableFilter = function() {
     angular.element('#host-video-filtered').attr('visibility', 'hidden');
     angular.element('#host-video').attr('visibility', 'visible');
+    ctrl._update();
   };
 
   ctrl._update = function() {
