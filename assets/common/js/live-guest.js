@@ -164,6 +164,7 @@ angular.module('live', []).service('scopeService', function() {
             }
           } else if (type == 'offer') {
             ctrl.selectedFilterIndex = obj['filter'];
+            alert(ctrl.selectedFilterIndex);
             ctrl.pcs[videoBoxIndex] = new RTCPeerConnection(rtcConfig);
             ctrl.pcs[videoBoxIndex].addEventListener('icecandidate', e => ctrl.onIceCandidate(ctrl.pcs[videoBoxIndex], e));
             ctrl.pcs[videoBoxIndex].addEventListener('iceconnectionstatechange', (e) => {});
