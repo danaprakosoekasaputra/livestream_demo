@@ -190,7 +190,6 @@ angular.module('live', []).service('scopeService', function() {
           } else if (type == 'set_filter') {
             ctrl.filteredBoxIndex = obj['box'];
             ctrl.selectedFilterIndex = obj['filter'];
-            alert(ctrl.selectedFilterIndex);
             if (ctrl.selectedFilterIndex > 0) {
               ctrl.enableFilter();
             } else {
@@ -462,8 +461,7 @@ angular.module('live', []).service('scopeService', function() {
   };
 
   ctrl.disableFilter = function() {
-    angular.element('#host-video-filtered').attr('visibility', 'hidden');
-    angular.element('#host-video').attr('visibility', 'visible');
+    ctrl.videoFiltered = false;
     ctrl._update();
   };
 
