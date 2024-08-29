@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html ng-app="home">
+  <head>
+    <title>DEMO</title>
+    <link rel="stylesheet" href="assets/common/css/global.css">
+    <link rel="stylesheet" href="assets/common/css/home.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="assets/lib/jquery/jquery.js"></script>
+    <script src="assets/lib/angularjs/angular.js"></script>
+    <link rel="stylesheet" href="assets/lib/toastr/toastr.scss">
+    <script src="assets/lib/toastr/toastr.js"></script>
+    <script>
+      const module = {};
+    </script>
+    <script type="module" src="assets/common/js/home.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </head>
+  <body>
+    <div ng-controller="HomeController as ctrl" style="width: calc(100% - 20px); height: 100%; padding-left: 10px; padding-right: 10px; display: flex; flex-direction: column; background-image: linear-gradient(#DBECFC, #E8E3E0); overflow-x: hidden;">
+      <div style="height: 5px;"></div>
+      <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+        <div style="display: flex; flex-direction: column; align-items: center; margin-left: 10px;">
+          <div style="color: #000000; font-size: 17px;">Popular</div>
+          <div style="width: 30px; height: 5px; border-radius: 5px; background-color: #FA2D55;"></div>
+        </div>
+        <div style="display: flex; flex-direction: row; align-items: center; margin-right: 10px;">
+          <div style="width: 30px; height: 30px; display: flex; justify-content: center; align-items: center;">
+            <ion-icon name="notifications-outline" style="color: #000000; font-size: 20px;"></ion-icon>
+          </div>
+          <div ng-click="ctrl.logout()" style="width: 30px; height: 30px; display: flex; justify-content: center; align-items: center;">
+            <ion-icon name="log-out" style="color: #000000; font-size: 20px;"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div style="height: 10px;"></div>
+      <div style="position: relative; width: 100%;">
+        <div id="slides" style="width: 100%; min-height: 150px; display: flex; flex-direction: row; position: relative;">
+        </div>
+        <div style="position: absolute; left: 20px; bottom: 0; right: 20px; width: calc(100% - 40px); display: flex; flex-direction: row; justify-content: center;">
+          <div ng-style="{'width':(ctrl.currentSlideIndex==0)?'30px':'6px'}" style="height: 6px; border-radius: 3px; background-color: #ffffff;"></div>
+          <div ng-style="{'width':(ctrl.currentSlideIndex==1)?'30px':'6px'}" style="height: 6px; border-radius: 3px; margin-left: 10px; background-color: #ffffff;"></div>
+          <div ng-style="{'width':(ctrl.currentSlideIndex==2)?'30px':'6px'}" style="height: 6px; border-radius: 3px; margin-left: 10px; background-color: #ffffff;"></div>
+          <div ng-style="{'width':(ctrl.currentSlideIndex==3)?'30px':'6px'}" style="height: 6px; border-radius: 3px; margin-left: 10px; background-color: #ffffff;"></div>
+        </div>
+      </div>
+      <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center; margin-top: 20px;">
+        <div style="display: flex; flex-direction: row; align-items: center;">
+          <ion-icon name="game-controller" style="color: orange; font-size: 20px;"></ion-icon>
+          <div style="color: #000000; font-size: 15px; margin-left: 10px;"><b>Featured Games</b></div>
+        </div>
+        <div style="display: flex; flex-direction: row; align-items: center;">
+          <div style="color: #000000; font-size: 10px;">More</div>
+          <ion-icon name="chevron-forward" style="color: #000000; font-size: 10px;"></ion-icon>
+        </div>
+      </div>
+      <div style="width: 100%; display: flex; flex-direction: row; align-items: center; margin-top: 10px;">
+        <div style="flex: 1; margin-right: 5px; display: flex; flex-direction: column; align-items: center;">
+          <img src="assets/common/img/slot-game-icon-1.jpg" style="width: 100%; height: 70px; border-radius: 10px; object-fit: cover;">
+          <div style="white-space: nowrap; color: #000000; font-size: 12px;">777</div>
+        </div>
+        <div style="flex: 1; margin-left: 5px; margin-right: 5px; display: flex; flex-direction: column; align-items: center;">
+          <img src="assets/common/img/slot-game-icon-2.jpg" style="width: 100%; height: 70px; border-radius: 10px; object-fit: cover;">
+          <div style="white-space: nowrap; color: #000000; font-size: 12px;">Scatter</div>
+        </div>
+        <div style="flex: 1; margin-left: 5px; margin-right: 5px; display: flex; flex-direction: column; align-items: center;">
+          <img src="assets/common/img/slot-game-icon-3.jpg" style="width: 100%; height: 70px; border-radius: 10px; object-fit: cover;">
+          <div style="white-space: nowrap; color: #000000; font-size: 12px;">Casino Bonus</div>
+        </div>
+        <div style="flex: 1; margin-left: 5px; display: flex; flex-direction: column; align-items: center;">
+          <img src="assets/common/img/slot-game-icon-4.jpg" style="width: 100%; height: 70px; border-radius: 10px; object-fit: cover;">
+          <div style="white-space: nowrap; color: #000000; font-size: 12px;">Lucky</div>
+        </div>
+      </div>
+      <div style="width: 100%; display: flex; flex-direction: row; align-items: center; margin-top: 10px;">
+        <div style="flex: 1; margin-right: 5px; display: flex; flex-direction: column; align-items: center;">
+          <img src="assets/common/img/slot-game-icon-5.jpg" style="width: 100%; height: 70px; border-radius: 10px; object-fit: cover;">
+          <div style="white-space: nowrap; color: #000000; font-size: 12px;">Poker</div>
+        </div>
+        <div style="flex: 1; margin-left: 5px; margin-right: 5px; display: flex; flex-direction: column; align-items: center;">
+          <img src="assets/common/img/slot-game-icon-6.jpg" style="width: 100%; height: 70px; border-radius: 10px; object-fit: cover;">
+          <div style="white-space: nowrap; color: #000000; font-size: 12px;">Wild</div>
+        </div>
+        <div style="flex: 1; margin-left: 5px; margin-right: 5px; display: flex; flex-direction: column; align-items: center;">
+          <img src="assets/common/img/slot-game-icon-7.jpg" style="width: 100%; height: 70px; border-radius: 10px; object-fit: cover;">
+          <div style="white-space: nowrap; color: #000000; font-size: 12px;">Classic Casino</div>
+        </div>
+        <div style="flex: 1; margin-left: 5px; display: flex; flex-direction: column; align-items: center;">
+          <img src="assets/common/img/slot-game-icon-8.jpg" style="width: 100%; height: 70px; border-radius: 10px; object-fit: cover;">
+          <div style="white-space: nowrap; color: #000000; font-size: 12px;">Big WIN</div>
+        </div>
+      </div>
+      <div ng-click="ctrl.goLive()" style="position: fixed; right: 10px; bottom: 10px; cursor: pointer; width: 50px; height: 50px; border-radius: 25px; background-color: #0000ff; display: flex; justify-content: center; align-items: center; z-index: 100000;">
+        <ion-icon name="videocam" style="color: #ffffff; font-size: 25px;"></ion-icon>
+      </div>
+      <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center; margin-top: 20px;">
+        <div style="display: flex; flex-direction: row; align-items: center;">
+          <ion-icon name="videocam" style="color: #fd79a8; font-size: 20px;"></ion-icon>
+          <div style="color: #000000; font-size: 15px; margin-left: 10px;"><b>Popular Live</b></div>
+        </div>
+        <div style="display: flex; flex-direction: row; align-items: center;">
+          <div style="color: #000000; font-size: 10px;">More</div>
+          <ion-icon name="chevron-forward" style="color: #000000; font-size: 10px;"></ion-icon>
+        </div>
+      </div>
+      <div ng-cloak style="margin-top: 10px; display: flex; flex-direction: row; flex-wrap: wrap;">
+        <div ng-repeat="liveStream in ctrl.liveStreams" style="">
+          <div ng-click="ctrl.openLive(liveStream)" ng-style="{'width':''+ctrl.liveStreamGridItemWidth+'px', 'height':''+ctrl.liveStreamGridItemWidth+'px', 'min-width':''+ctrl.liveStreamGridItemWidth+'px'}" style="cursor: pointer; margin-top: 10px; margin-left: 5px; margin-right: 5px; position: relative; border-radius: 10px; overflow: hidden;">
+            <img src="{{''+ctrl.USERDATA_URL+liveStream.user.profile_picture}}" style="width: 100%; height: 100%; object-fit: cover;">
+            <div style="position: absolute; top: 10px; right: 10px; display: flex; flex-direction: row; align-items: center;">
+              <ion-icon name="flame" style="color: orange; font-size: 20px;"></ion-icon>
+              <div style="color: #ffffff; font-size: 12px; margin-left: 0;">{{''+ctrl.getFormatterViewCount(liveStream.view_count)}}</div>
+            </div>
+            <div style="position: absolute; bottom: 10px; left: 10px; color: #ffffff; font-size: 10px;">
+              HOKI&CUAN
+            </div>
+            <div style="position: absolute; bottom: 10px; right: 10px; display: flex; flex-direction: row; align-items: center;">
+              <ion-icon name="navigate-outline" style="color: white; font-size: 12px;"></ion-icon>
+              <div style="color: #ffffff; font-size: 9px;">Indonesia</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

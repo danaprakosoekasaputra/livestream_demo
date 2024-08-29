@@ -1,0 +1,15 @@
+.anim1 {
+  width: 10px;
+  animation-name: anim1-keyframes;
+  animation-fill-mode: forwards;
+  animation-duration: 2s;
+}
+
+@keyframes anim1-keyframes {
+  0% {
+    width: 10px;
+  }
+  100% {
+    width: 100%;
+  }
+}

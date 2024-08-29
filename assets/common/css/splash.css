@@ -1,0 +1,15 @@
+.anim1 {
+  opacity: 0;
+  animation-name: anim1-keyframes;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes anim1-keyframes {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

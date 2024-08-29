@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="login">
+  <head>
+    <title>DEMO</title>
+    <link rel="stylesheet" href="assets/common/css/global.css">
+    <link rel="stylesheet" href="assets/common/css/login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="assets/lib/jquery/jquery.js"></script>
+    <script src="assets/lib/angularjs/angular.js"></script>
+    <script>
+      const module = {};
+    </script>
+    <script type="module" src="assets/common/js/login.js"></script>
+  </head>
+  <body>
+    <div ng-controller="LoginController as ctrl" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column; background-color: #ffffff;">
+      <div style="width: calc(100% - 80px); height: 40px; margin-left: 40px; margin-right: 40px; border: 1px solid #888888; border-radius: 30px;">
+        <input ng-model="ctrl.username" placeholder="Username" style="padding-left: 15px; padding-right: 15px; background-color: transparent; border: 0; outline: 0; width: calc(100% - 30px); height: 100%;">
+      </div>
+      <div style="margin-top: 10px; width: calc(100% - 80px); height: 40px; margin-left: 40px; margin-right: 40px; border: 1px solid #888888; border-radius: 30px;">
+        <input ng-model="ctrl.password" placeholder="Password" style="padding-left: 15px; padding-right: 15px; background-color: transparent; border: 0; outline: 0; width: calc(100% - 30px); height: 100%;">
+      </div>
+      <div ng-style="{'background-color': ctrl.loggingIn?'#3742fa7f':'#3742fa'}" ng-click="ctrl.login()" style="cursor: pointer; border-radius: 30px; margin-top: 20px; width: 100px; height: 40px; color: #ffffff; font-size: 15px; display: flex; justify-content: center; align-items: center;">
+        <div ng-cloak ng-if="ctrl.loggingIn==true" class="loader" style="width: 20px; height: 20px; margin-right: 5px;"></div>
+        <b>LOGIN</b>
+      </div>
+    </div>
+  </body>
+</html>
