@@ -190,6 +190,7 @@ angular.module('live', []).service('scopeService', function() {
           } else if (type == 'set_filter') {
             ctrl.filteredBoxIndex = obj['box'];
             ctrl.selectedFilterIndex = obj['filter'];
+            alert(ctrl.selectedFilterIndex);
             if (ctrl.selectedFilterIndex > 0) {
               ctrl.enableFilter();
             } else {
